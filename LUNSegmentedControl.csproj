@@ -35,12 +35,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\Desktop\sharpie\Binding\LUNSegmentedControl.framework">
-      <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
-  </ItemGroup>
-  <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="LUNSegmentedControl.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="LUNSegmentedControl.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
