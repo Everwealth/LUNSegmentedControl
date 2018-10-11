@@ -1,10 +1,9 @@
 using System;
 using Foundation;
-using LUNSegmentedControl;
 using ObjCRuntime;
 using UIKit;
 
-namespace LUNSegmentedControl
+namespace Xamarin.Bindings.LUNSegmentedControl
 {
     // @interface LUNGradientView : UIView
     [BaseType(typeof(UIView))]
@@ -54,35 +53,35 @@ namespace LUNSegmentedControl
 
         // @optional -(NSArray<UIColor *> *)segmentedControl:(LUNSegmentedControl *)segmentedControl gradientColorsForStateAtIndex:(NSInteger)index;
         [Export("segmentedControl:gradientColorsForStateAtIndex:")]
-        UIColor[] SegmentedControl(LUNSegmentedControl segmentedControl, nint index);
+        UIColor[] GradientColorsForStateAtIndex(LUNSegmentedControl segmentedControl, nint index);
 
         // @optional -(NSArray<UIColor *> *)segmentedControl:(LUNSegmentedControl *)segmentedControl gradientColorsForBounce:(LUNSegmentedControlBounce)bounce;
         [Export("segmentedControl:gradientColorsForBounce:")]
-        UIColor[] SegmentedControl(LUNSegmentedControl segmentedControl, LUNSegmentedControlBounce bounce);
+        UIColor[] GradientColorsForBounce(LUNSegmentedControl segmentedControl, LUNSegmentedControlBounce bounce);
 
         // @optional -(NSString *)segmentedControl:(LUNSegmentedControl *)segmentedControl titleForStateAtIndex:(NSInteger)index;
         [Export("segmentedControl:titleForStateAtIndex:")]
-        string SegmentedControl(LUNSegmentedControl segmentedControl, nint index);
+        string TitleForStateAtIndex(LUNSegmentedControl segmentedControl, nint index);
 
         // @optional -(NSAttributedString *)segmentedControl:(LUNSegmentedControl *)segmentedControl attributedTitleForStateAtIndex:(NSInteger)index;
         [Export("segmentedControl:attributedTitleForStateAtIndex:")]
-        NSAttributedString SegmentedControl(LUNSegmentedControl segmentedControl, nint index);
+        NSAttributedString AttributedTitleForStateAtIndex(LUNSegmentedControl segmentedControl, nint index);
 
         // @optional -(NSString *)segmentedControl:(LUNSegmentedControl *)segmentedControl titleForSelectedStateAtIndex:(NSInteger)index;
         [Export("segmentedControl:titleForSelectedStateAtIndex:")]
-        string SegmentedControl(LUNSegmentedControl segmentedControl, nint index);
+        string TitleForSelectedStateAtIndex(LUNSegmentedControl segmentedControl, nint index);
 
         // @optional -(NSAttributedString *)segmentedControl:(LUNSegmentedControl *)segmentedControl attributedTitleForSelectedStateAtIndex:(NSInteger)index;
         [Export("segmentedControl:attributedTitleForSelectedStateAtIndex:")]
-        NSAttributedString SegmentedControl(LUNSegmentedControl segmentedControl, nint index);
+        NSAttributedString AttributedTitleForSelectedStateAtIndex(LUNSegmentedControl segmentedControl, nint index);
 
         // @optional -(UIView *)segmentedControl:(LUNSegmentedControl *)segmentedControl viewForStateAtIndex:(NSInteger)index;
         [Export("segmentedControl:viewForStateAtIndex:")]
-        UIView SegmentedControl(LUNSegmentedControl segmentedControl, nint index);
+        UIView ViewForStateAtIndex(LUNSegmentedControl segmentedControl, nint index);
 
         // @optional -(UIView *)segmentedControl:(LUNSegmentedControl *)segmentedControl viewForSelectedStateAtIndex:(NSInteger)index;
         [Export("segmentedControl:viewForSelectedStateAtIndex:")]
-        UIView SegmentedControl(LUNSegmentedControl segmentedControl, nint index);
+        UIView ViewForSelectedStateAtIndex(LUNSegmentedControl segmentedControl, nint index);
     }
 
     // @interface LUNSegmentedControl : UIView
@@ -192,6 +191,6 @@ namespace LUNSegmentedControl
 
         // extern const unsigned char [] LUNSegmentedControlVersionString;
         [Field("LUNSegmentedControlVersionString", "__Internal")]
-        byte[] LUNSegmentedControlVersionString { get; }
+        NSString LUNSegmentedControlVersionString { get; }
     }
 }
