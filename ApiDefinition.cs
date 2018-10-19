@@ -7,14 +7,14 @@ namespace Xamarin.Bindings.LUNSegmentedControl
 {
     // @interface LUNGradientView : UIView
     [BaseType(typeof(UIView))]
-    interface LUNGradientView
+    public interface ILUNGradientView
     {
     }
 
     // @protocol LUNSegmentedControlDelegate <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
-    interface LUNSegmentedControlDelegate
+    public partial interface LUNSegmentedControlDelegate
     {
         // @optional -(void)segmentedControl:(LUNSegmentedControl *)segmentedControl didChangeStateFromStateAtIndex:(NSInteger)fromIndex toStateAtIndex:(NSInteger)toIndex;
         [Export("segmentedControl:didChangeStateFromStateAtIndex:toStateAtIndex:")]
@@ -44,7 +44,7 @@ namespace Xamarin.Bindings.LUNSegmentedControl
     // @protocol LUNSegmentedControlDataSource <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
-    interface LUNSegmentedControlDataSource
+    public interface LUNSegmentedControlDataSource
     {
         // @required -(NSInteger)numberOfStatesInSegmentedControl:(LUNSegmentedControl *)segmentedControl;
         [Abstract]
@@ -86,7 +86,7 @@ namespace Xamarin.Bindings.LUNSegmentedControl
 
     // @interface LUNSegmentedControl : UIView
     [BaseType(typeof(UIView))]
-    interface LUNSegmentedControl
+    public interface LUNSegmentedControl
     {
         [Wrap("WeakDelegate")]
         LUNSegmentedControlDelegate Delegate { get; set; }
@@ -175,7 +175,7 @@ namespace Xamarin.Bindings.LUNSegmentedControl
     // @interface LUNRemoveConstraints (UIView)
     [Category]
     [BaseType(typeof(UIView))]
-    interface UIView_LUNRemoveConstraints
+    public interface UIView_LUNRemoveConstraints
     {
         // -(void)lun_removeConstraintsFromSubTree:(NSSet<NSLayoutConstraint *> *)constraints;
         [Export("lun_removeConstraintsFromSubTree:")]
@@ -183,7 +183,7 @@ namespace Xamarin.Bindings.LUNSegmentedControl
     }
 
     [Static]
-    partial interface Constants
+    public partial interface Constants
     {
         // extern double LUNSegmentedControlVersionNumber;
         [Field("LUNSegmentedControlVersionNumber", "__Internal")]
